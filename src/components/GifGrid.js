@@ -1,39 +1,33 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
+import { getGifs } from '../helpers/GetGifs'
+import { useFecthGifs } from '../hooks/useFechGifs'
+import { GifGridItem } from './GifGridItem'
 
-export const GifGrid = ({category}) => {
+export const GifGrid = ({ category }) => {
 
-    const [images, setimages] = useState([])
+    const {data:images,loading} = useFecthGifs(category)
 
-    useEffect(()=>{
-        getGifs()
-    },[])
+    /**
+     * recordar que gifs => setimages(gifs) -> setimages
+     * 
+     * <GifGridItem key={img.id} {...img} --> manda la info de img como props independientes
+     * 
+     * const {data:images,loading} -> para renombrar variables
+     */
 
-    const getGifs = async() => {
-        const url = 'https://api.giphy.com/v1/gifs/search?q=rick&limit=10&api_key=5El953it319EnsvYVOm9Wk4AWGjZanb1'
-        const resp = await fetch(url)
-        const {data} = await resp.json()
-        
-        const gifs = data.map((gif) => {
-            return {
-                id : gif.id,
-                title : gif.title,
-                url : gif.images?.downsized_medium.url
-            }
-        })
-        console.log(gifs)
-
-        setimages(gifs)
-    }
 
 
     return (
         <>
             <h3>{category}</h3>
-            <ol>
-                    {images.map(({id,title}) => {
-                        return <li key={id}>{title}</li>
-                    })}
-            </ol>
+
+            {loading && <p className='animate__animated animate__jackInTheBox'>Loading...</p>}
+
+            <div className='card-grid'>
+                 {images.map(img => {
+                     return <GifGridItem key={img.id} {...img} />
+                })}
+            </div>
         </>
     )
 }
