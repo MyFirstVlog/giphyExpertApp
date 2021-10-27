@@ -5,10 +5,10 @@ import { GifGrid } from './components/GifGrid';
 const categoriasRandom = ['Parasite', 'One Punch', 'Tokyo Ghoul']
 let init = ['Naruto', 'Attack On Titans', 'Kimetzu no Yaiba']
 
-const GifExpertApp = () => {
+const GifExpertApp = ({defaultCategories = []}) => {
 
 
-    const [categorias, setCategorias] = useState(['Naruto'])
+    const [categorias, setCategorias] = useState(defaultCategories)
 
 
     // const handleAdd = () => {

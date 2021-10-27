@@ -20,6 +20,7 @@ export const AddCategory = ({setCategorias}) => {
 
     return (
         <form onSubmit= {handleSubmit}>
+            <p>{inputValue}</p>
             <input
                 placeholder = 'Que desea buscar?'
                 type="text"

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas con el componente <GetGrid /> cuando useFetch() regresa info, verificar los items  1`] = `
+<Fragment>
+  <h3>
+    CR7
+  </h3>
+  <div
+    className="card-grid"
+  >
+    <GifGridItem
+      id="3425345"
+      key="3425345"
+      title="El Bicho"
+      url="http://localhost.com/images"
+    />
+  </div>
+</Fragment>
+`;
+
+exports[`Pruebas con el componente <GetGrid /> hacer el match del componente  1`] = `
+<Fragment>
+  <h3>
+    CR7
+  </h3>
+  <p
+    className="animate__animated animate__jackInTheBox"
+  >
+    Loading...
+  </p>
+  <div
+    className="card-grid"
+  />
+</Fragment>
+`;

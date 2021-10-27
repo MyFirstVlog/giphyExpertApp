@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas generales a la app gifExpertApp debe hacer match con el wrapper el snapshot  1`] = `
+<Fragment>
+  <h2>
+    GifExpertApp
+  </h2>
+  <AddCategory
+    setCategorias={[Function]}
+  />
+  <hr />
+  <ol />
+</Fragment>
+`;
+
+exports[`Pruebas generales a la app gifExpertApp debe mostart una lista de categorias  1`] = `
+<Fragment>
+  <h2>
+    GifExpertApp
+  </h2>
+  <AddCategory
+    setCategorias={[Function]}
+  />
+  <hr />
+  <ol>
+    <GifGrid
+      category="CR7"
+      key="CR7"
+    />
+    <GifGrid
+      category="Real Madrid"
+      key="Real Madrid"
+    />
+  </ol>
+</Fragment>
+`;
